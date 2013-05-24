@@ -35,7 +35,8 @@ describe GoogleBooks do
       GoogleBooks.send(:query).should include 'startIndex=2'
       GoogleBooks.send(:query).should include 'maxResults=20'
       GoogleBooks.send(:query).should include 'q=the+great+gatsby'
-      GoogleBooks.send(:query).count('&').should eq 2 
+      GoogleBooks.send(:query).should include 'country=us'
+      GoogleBooks.send(:query).count('&').should eq 3
     end
     
     it "should return the proper number results based on the count passed in" do

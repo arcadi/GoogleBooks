@@ -40,11 +40,6 @@ module GoogleBooks
           example.image_link(:zoom => 7).should include "zoom=7"
         end
 
-        it "should default to 'edge=none' and curl when dictated" do
-          example.image_link.should include "edge=none"
-          example.image_link(:curl => true).should include "edge=curl"
-        end
-
         context "when google_book_item has no isbn_10 but one OTHER industry identifiers" do
 
           let(:google_book_item) {
