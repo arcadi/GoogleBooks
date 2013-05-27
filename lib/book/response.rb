@@ -12,7 +12,7 @@ module GoogleBooks
     # hash of generally unusable Google API specific data.
     def each(&block)
       return [] if total_items == 0
-      @response['items'].each do |item|
+      @response['items'].to_a.each do |item|
         block.call(Item.new(item))
       end
     end
